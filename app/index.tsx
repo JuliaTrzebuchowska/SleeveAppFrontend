@@ -7,6 +7,7 @@ import PermissionPrompt from "@/components/PermissionPrompt";
 import WelcomeScreen from "@/screens/WelcomeScreen";
 import StartScreen from "@/screens/StartScreen";
 import RegisterScreen from "@/screens/RegisterScreen";
+import SignInScreen from "@/screens/SignInScreen";
 
 const Stack = createStackNavigator();
 
@@ -55,6 +56,11 @@ export default function Index() {
        <Stack.Screen
         name="RegisterScreen"
         component={RegisterScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SignInScreen"
+        component={SignInScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
