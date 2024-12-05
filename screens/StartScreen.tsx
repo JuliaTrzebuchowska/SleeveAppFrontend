@@ -1,8 +1,10 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import med from '../assets/images/med.png'
+import React from "react";
+import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import med from "../assets/images/med.png";
+import { useNavigation } from "@react-navigation/native";
 
 const StartScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image source={med} style={styles.illustration} />
@@ -11,8 +13,13 @@ const StartScreen = () => {
           <Text style={styles.buttonText}>Zaloguj się</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.button, styles.registerButton]}>
-          <Text style={[styles.buttonText, styles.registerText]}>Zarejestruj się</Text>
+        <TouchableOpacity
+          style={[styles.button, styles.registerButton]}
+          onPress={() => navigation.navigate("RegisterScreen")}
+        >
+          <Text style={[styles.buttonText, styles.registerText]}>
+            Zarejestruj się
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -22,9 +29,9 @@ const StartScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#ffffff",
     padding: 20,
   },
   illustration: {
@@ -34,27 +41,27 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 60,
-    width: '100%',
-    alignItems: 'center',
+    width: "100%",
+    alignItems: "center",
   },
   button: {
-    width: '80%',
+    width: "80%",
     padding: 15,
     borderRadius: 8,
-    backgroundColor: '#4A628A',
-    alignItems: 'center',
+    backgroundColor: "#4A628A",
+    alignItems: "center",
     marginBottom: 15,
   },
   registerButton: {
-    backgroundColor: '#7AB2D3',
+    backgroundColor: "#7AB2D3",
   },
   buttonText: {
     fontSize: 16,
-    color: '#ffffff',
-    fontWeight: '500',
+    color: "#ffffff",
+    fontWeight: "500",
   },
   registerText: {
-    color: '#ffffff',
+    color: "#ffffff",
   },
 });
 
