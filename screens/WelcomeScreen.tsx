@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, Button, ScrollView, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from "@react-navigation/native";
 
-const WelcomeScreen = ({ navigation }: any) => {
+const WelcomeScreen= () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -35,7 +37,7 @@ const WelcomeScreen = ({ navigation }: any) => {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('NextScreen')}
+          onPress={() => navigation.navigate("StartScreen")}
         >
           <Text style={styles.buttonText}>Zaczynamy</Text>
         </TouchableOpacity>
