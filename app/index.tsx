@@ -6,6 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import PermissionPrompt from "@/components/PermissionPrompt";
 import WelcomeScreen from "@/screens/WelcomeScreen";
 import StartScreen from "@/screens/StartScreen";
+import RegisterScreen from "@/screens/RegisterScreen";
 
 const Stack = createStackNavigator();
 
@@ -49,6 +50,11 @@ export default function Index() {
        <Stack.Screen
         name="StartScreen"
         component={StartScreen}
+        options={{ headerShown: false }}
+      />
+       <Stack.Screen
+        name="RegisterScreen"
+        component={RegisterScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
