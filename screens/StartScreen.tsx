@@ -9,7 +9,10 @@ const StartScreen = () => {
     <View style={styles.container}>
       <Image source={med} style={styles.illustration} />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("SignInScreen")}
+        >
           <Text style={styles.buttonText}>Zaloguj się</Text>
         </TouchableOpacity>
 
